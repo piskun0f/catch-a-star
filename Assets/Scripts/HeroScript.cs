@@ -6,19 +6,21 @@ public class HeroScript : MonoBehaviour
 {
     [SerializeField] GameCounterScript counter;
     [SerializeField] Rigidbody2D heroBody;
+    [SerializeField] SceneChanger scene;
 
     // is hero sticked on cloud
     [SerializeField]  bool isSticked = true;
 
     // movement
     Vector2 direction;
-    float speed = 1f;
+    float speed = 4f;
     float rotationSpeed = 100f;
 
     private void Die()
     {
         Stop();
         Destroy(gameObject);
+        scene.NextLevel(2);
     }
 
     private void Move()
@@ -33,7 +35,7 @@ public class HeroScript : MonoBehaviour
 
 
     private void Stop()
-    {
+    { 
         heroBody.velocity = Vector2.zero;
         heroBody.Sleep();
     }   

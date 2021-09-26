@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1eafc075ecc67447bca4efa22dab8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cloudParticle: {fileID: 2643551485738063354, guid: 9f9a42fb1da35e048856131f40d9fd0b, type: 3}
 --- !u!61 &-3797542094401289187
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -195,4 +195,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: {fileID: 0}
   heroBody: {fileID: 7758706934249513901}
+  scene: {fileID: 0}
   isSticked: 1
