@@ -54,13 +54,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BorderChecker.cs" />
+    <Compile Include="Assets\Scripts\Border.cs" />
     <Compile Include="Assets\Scripts\GameCounterScript.cs" />
     <Compile Include="Assets\Scripts\HeroScript.cs" />
     <Compile Include="Assets\Scripts\StarScript.cs" />
-    <Compile Include="Assets\BorderScript.cs" />
     <Compile Include="Assets\Scripts\CloudScript.cs" />
     <Compile Include="Assets\Scripts\SpawnerScript.cs" />
-    <Compile Include="Assets\Scripts\Border.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
