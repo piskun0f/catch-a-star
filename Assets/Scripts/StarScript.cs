@@ -7,7 +7,7 @@ public class StarScript : MonoBehaviour
     [SerializeField] SpawnerScript spawner;
 
     public Rigidbody2D starBody;
-    public Vector2 direction = new Vector2(1,1);
+    public Vector2 direction = Vector2.zero;
 
     bool isDead = false;
     float speed = 0.4f;
@@ -20,8 +20,7 @@ public class StarScript : MonoBehaviour
 
     public void Die()
     {
-        print("diee");
-        spawner.StarDeleted();
+        spawner.SpawnStar();
         Stop();
         isDead = true;
         Destroy(gameObject);

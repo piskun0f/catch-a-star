@@ -8,28 +8,20 @@ public class SpawnerScript : MonoBehaviour
     [SerializeField] float randomRange = 1f;
     [SerializeField] BorderChecker borderChecker;
 
-    int starsCount = 0;
-
     Vector2 max;
-    float offset = 0.8f;
+    float offset = 0.7f;
 
     private void Start()
-    {
+    {        
         Vector2 borderMax = borderChecker.GetBorderMax();
         max = new Vector2(borderMax.x - offset, borderMax.y - offset);
-        StartCoroutine(StarsCreation());
+        StartCoroutine(InitSpawn());
     }
 
-    private IEnumerator StarsCreation()
+    private IEnumerator InitSpawn()
     {
-        while (true)
-        {
-            yield return new WaitForEndOfFrame();
-            if (starsCount < 2)
-            {
-                SpawnStar();
-            }
-        }
+        yield return new WaitForSeconds(1);
+        SpawnStar();
     }
 
     private int GetRandomSign()
@@ -44,17 +36,9 @@ public class SpawnerScript : MonoBehaviour
         return new Vector2(Random.Range(-randomRange, randomRange), Random.Range(-randomRange, randomRange));
     }
 
-    public void StarDeleted()
-    {
-        print(starsCount);
-        starsCount--;
-    }
-
     public GameObject SpawnStar()
     {
-        starsCount++;
-        print(starsCount);
-        Vector2 position = new Vector2(0, 0);
+        Vector2 position = Vector2.zero;
         int sign = GetRandomSign();
 
         if (Random.Range(0, 2) == 0)
@@ -66,7 +50,8 @@ public class SpawnerScript : MonoBehaviour
         {
             position.x = Random.Range(-max.x, max.x);
             position.y = sign * max.y;
-        }
+            print(max.x);
+        }        
 
         GameObject star = Instantiate(starTemplate, position, Quaternion.identity);
 
